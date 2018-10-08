@@ -2,3 +2,7 @@ CMakeLists.txt
 cmake-build-debug
 .idea/
 .idea/codeStyles/Project.xml
+List.o
+Node.o
+ListTraverse.o
+prog3.o

@@ -10,48 +10,59 @@ Program #3
 #include "Node.h"
 
 
-
-struct Node_t* makeNode1(struct Node_t* this) {
+struct Node_t *makeNode1(struct Node_t *this)
+{
 	//struct Node_t* new -> nextNode = this;
-	this -> nextNode = NULL;
-	this -> value = 0;
+	this->nextNode = NULL;
+	this->value = 0;
 	return this;
 }
 
-struct Node_t* makeNode2(struct Node_t* this, int val) {
-	this -> nextNode = NULL;
-	this -> value = val;
+struct Node_t *makeNode2(struct Node_t *this, int val)
+{
+	this->nextNode = NULL;
+	this->value = val;
 	return this;
 }
 
-struct Node_t* makeNode4(struct Node_t* this, int val, struct Node_t* next) {
-	this -> nextNode = next;
-	this -> value = val;
+struct Node_t *makeNode4(struct Node_t *this, int val, struct Node_t *next)
+{
+	this->nextNode = next;
+	this->value = val;
 	return this;
 }
 
 //Destroyers
-void freeNode(struct Node_t* this) {
+void freeNode(struct Node_t *this)
+{
 	free(this);
 	this = NULL;
 }
 
 //Mutators
-int setData(struct Node_t* this, int val) {
-	this -> value = val;
+int setData(struct Node_t *this, int val)
+{
+	this->value = val;
 	return val;
 }
 
-struct Node_t* setNext(struct Node_t* this, struct Node_t* next) {
-	this -> nextNode = next;
+struct Node_t *setNext(struct Node_t *this, struct Node_t *next)
+{
+	this->nextNode = next;
 	return next;
 }
 
 //Accessors
-int getData(struct Node_t* this) {
-	return this -> value;
+int getData(struct Node_t *this)
+{
+	if (this == NULL)
+	{
+		return 0;
+	}
+	return this->value;
 }
 
-struct Node_t* getNext(struct Node_t* this) {
-	return this -> nextNode;
+struct Node_t *getNext(struct Node_t *this)
+{
+	return this->nextNode;
 }
